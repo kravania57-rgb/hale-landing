@@ -31,6 +31,7 @@
   @media (max-width: 520px) { [data-products-grid] { grid-template-columns: 1fr; } }
 
 /* --- доступність / продуктивність (додано при міграції) --- */
+[data-products-grid] { grid-template-columns: repeat(auto-fit, minmax(260px, 400px)) !important; }
 img { height: auto; } /* атрибути width/height лише резервують місце; inline-висота (240px, 100%) має пріоритет */
 :focus-visible { outline: 2px solid #C0764E; outline-offset: 3px; border-radius: 4px; }
 summary { cursor: pointer; }
