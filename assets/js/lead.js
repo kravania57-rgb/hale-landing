@@ -58,14 +58,6 @@
     setTimeout(function () { var n = document.querySelector('form[data-lead] input[name="Імʼя"]'); if (n) n.focus({ preventScroll: true }); }, 700);
   });
 
-  // запис через Telegram-бота — окрема подія в аналітиці
-  document.addEventListener('click', function (e) {
-    var a = e.target && e.target.closest && e.target.closest('a[href*="t.me/haleconsaltbot"]');
-    if (!a) return;
-    try { if (window.gtag) window.gtag('event', 'contact', { method: 'telegram_bot' }); } catch (x) {}
-    try { if (window.fbq) window.fbq('track', 'Contact', { content_name: 'Консультація · бот' }); } catch (x) {}
-  });
-
   // плашка «Оздоровча програма · старт 30 листопада» — сама зникає після 30.11.2026
   var END = Date.UTC(2026, 10, 30, 22, 0);                     // 1 грудня 00:00 за Києвом
   var closed = false;
