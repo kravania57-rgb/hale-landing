@@ -34,6 +34,8 @@
 <script defer src="/assets/js/react.min.js"></script>
 <script defer src="/assets/js/react-dom.min.js"></script>
 <script defer src="/assets/js/dc-runtime.js"></script>
+<script>window.HALE_LEAD_URL="https://script.google.com/macros/s/AKfycbzaTg_KuP0T11-IhDmsU2lCiBfQUNj3qysUeJjDHwcEuV1ddDWcyq5n3eJDMvZReLKi/exec";</script>
+<script defer src="/assets/js/lead.js"></script>
 </head>
 <body>
 <x-dc>
@@ -481,11 +483,12 @@
         </div>
         <div style="display: flex; gap: 16px; font-size: 13px; margin-top: 6px; color: #5c6353;"><a href="https://www.instagram.com/dr.yulia_shy/" target="_blank" rel="noopener" style-hover="color:#042c29">Instagram</a><a href="https://t.me/+lb3Numd94s4xNzMy" target="_blank" rel="noopener" style-hover="color:#042c29">Telegram</a><a href="https://www.youtube.com/@hale.holistic" target="_blank" rel="noopener" style-hover="color:#042c29">YouTube</a></div>
       </div>
-      <form action="https://formsubmit.co/dasha4092@gmail.com" method="POST" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px;">
-        <input type="hidden" name="_subject" value="Нова заявка з сайту Hale">
+      <form data-lead="1" action="https://formsubmit.co/dasha4092@gmail.com" method="POST" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 12px;">
+        <input type="hidden" name="_subject" value="Нова заявка з сайту Hale"><input type="hidden" name="_autoresponse" value="Дякуємо! Вашу заявку на консультацію отримано. Ми звʼяжемося з вами найближчим часом. З турботою, Юлія Кравченко, HALE · hale.academy">
         <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://hale.academy/thanks.html"><input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
         <input aria-label="Ваше імʼя" name="Імʼя" required="{{ true }}" placeholder="Ваше імʼя" style="background: #f4f1ea; border: 1px solid #042c2912; border-radius: 12px; padding: 15px 18px; font-size: 14px; color: #042c29; transition: border-color .2s, box-shadow .2s;" style-focus="border-color:#8a9a86;box-shadow:0 0 0 3px rgba(142,155,132,.2)">
-        <input aria-label="Telegram або email" name="Контакт" required="{{ true }}" data-contact="1" pattern="\s*(?:[^@\s]+@[^@\s]+\.[A-Za-z]{2,}|@[A-Za-z0-9_]{3,}|(?:https?://)?(?:www\.)?t\.me/[^\s]+)\s*" title="Вкажіть email (ім'я@пошта.com) або Telegram (@нік чи t.me/нік)" placeholder="Telegram або email" style="background: #f4f1ea; border: 1px solid #042c2912; border-radius: 12px; padding: 15px 18px; font-size: 14px; color: #042c29; transition: border-color .2s, box-shadow .2s;" style-focus="border-color:#8a9a86;box-shadow:0 0 0 3px rgba(142,155,132,.2)">
+        <input aria-label="Ваш email (надішлемо підтвердження)" type="email" name="email" required="{{ true }}" autocomplete="email" placeholder="Ваш email (надішлемо підтвердження)" style="background: #f4f1ea; border: 1px solid #042c2912; border-radius: 12px; padding: 15px 18px; font-size: 14px; color: #042c29; transition: border-color .2s, box-shadow .2s;" style-focus="border-color:#8a9a86;box-shadow:0 0 0 3px rgba(142,155,132,.2)">
+        <input aria-label="Telegram або телефон (за бажанням)" name="Контакт" autocomplete="tel" placeholder="Telegram або телефон (за бажанням)" style="background: #f4f1ea; border: 1px solid #042c2912; border-radius: 12px; padding: 15px 18px; font-size: 14px; color: #042c29; transition: border-color .2s, box-shadow .2s;" style-focus="border-color:#8a9a86;box-shadow:0 0 0 3px rgba(142,155,132,.2)">
         <sc-raw-select aria-label="Формат консультації" name="Формат консультації" required="{{ true }}" style="background: #f4f1ea; border: 1px solid #042c2912; border-radius: 12px; padding: 15px 18px; font-size: 14px; color: #042c29; appearance: none; cursor: pointer; transition: border-color .2s, box-shadow .2s;" style-focus="border-color:#8a9a86;box-shadow:0 0 0 3px rgba(142,155,132,.2)">
           <option value="" disabled="" selected="">Оберіть формат консультації</option>
           <option value="Ведення (супровід 4 тижні)">Ведення — супровід 4 тижні</option>
