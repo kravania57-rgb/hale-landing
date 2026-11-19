@@ -24,6 +24,7 @@
       format: val(f, 'Формат консультації'), request: val(f, 'Запит'), source: source()
     };
     try { if (window.gtag) window.gtag('event', 'generate_lead', { form: 'consultation', format: payload.format }); } catch (x) {}
+    try { if (window.fbq) window.fbq('track', 'SubmitApplication', { content_name: 'Консультація' }); } catch (x) {}
     fetch(url, { method: 'POST', mode: 'no-cors', keepalive: true,
                  headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) })
       .then(function () { location.href = '/thanks.html'; })
