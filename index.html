@@ -185,26 +185,6 @@
     </section></div>
   
 
-  <!-- ===== FAQ ===== -->
-  <section id="faq" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 56px);">
-    <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(32px, 5vw, 42px); margin: 0 0 28px;">Часті запитання</h2>
-    <div style="max-width: 860px; border-top: 1px solid #042c2922;">
-      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
-        <div style="border-bottom: 1px solid #042c2922;">
-          <button sc-camel-on-click="{{ f.toggle }}" aria-expanded="{{ f.exp }}" aria-controls="{{ f.pid }}" style="width: 100%; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(18px, 2.6vw, 24px) 4px; text-align: left; font-family: 'Calvino', serif; font-size: clamp(18px, 2.6vw, 23px); color: #042c29; transition: color .2s;" style-hover="color:#494224">
-            <span>{{ f.q }}</span>
-            <span style="font-size: 26px; color: #494224; flex: none; line-height: 1;">{{ f.sign }}</span>
-          </button>
-          <div id="{{ f.pid }}" role="region" style="display: grid; grid-template-rows: {{ f.rows }}; opacity: {{ f.op }}; transition: grid-template-rows .4s ease, opacity .4s ease;">
-            <div style="overflow: hidden;">
-              <p style="margin: 0; padding: 0 4px 24px; font-size: 15px; line-height: 1.8; color: #5c6353; max-width: 700px; white-space: pre-line;">{{ f.a }}</p>
-            </div>
-          </div>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
   <!-- ===== OFFER HUB (tabs) ===== -->
   <section id="offer" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 56px);">
     <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; margin-bottom: 32px;">
@@ -214,8 +194,7 @@
 
     <div role="tablist" aria-label="Розділи пропозицій" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 36px;">
       <button role="tab" aria-selected="{{ isConsult }}" sc-camel-on-click="{{ setConsult }}" style="{{ tabConsult }}">Консультації</button>
-      <button role="tab" aria-selected="{{ isCourses }}" sc-camel-on-click="{{ setCourses }}" style="{{ tabCourses }}">Курси</button>
-      <button role="tab" aria-selected="{{ isClubs }}" sc-camel-on-click="{{ setClubs }}" style="{{ tabClubs }}">Клуб</button>
+      <button role="tab" aria-selected="{{ isCourses }}" sc-camel-on-click="{{ setCourses }}" style="{{ tabCourses }}">Клуб і програма</button>
     </div>
 
     <!-- CONSULT PANEL -->
@@ -234,7 +213,7 @@
             <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #5c6353;"><span style="color: #042c29; flex: none; margin-top: 1px;">✓</span>Супровід протягом 4 тижнів</div>
           </div>
           <details style="border-top: 1px solid #042c2914; padding-top: 12px; margin-top: 2px;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; list-style: none; font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #494224;">Деталі ведення<span class="hale-arrow">↓</span></summary><div style="display: flex; flex-direction: column; gap: 9px; padding-top: 12px; font-size: 13.5px; line-height: 1.6; color: #5c6353;"><div style="text-decoration-line: underline; font-style: italic">Ведення — це велика співпраця протягом 4 тижнів.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Первинна консультація: анкета, аналіз анкети та попередніх обстежень. За потреби — список аналізів, які варто доздати.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Далі — письмовий план рекомендацій та консультація у вигляді відео-дзвінка (1 година).</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Рекомендації після консультації на 4 тижні, план оздоровлення протягом ведення й на наступні 3–5 тижнів.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Співпраця включає 2 зідзвони та спілкування протягом місяця.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>З понеділка по пʼятницю ділюся теоретичними та практичними знаннями відповідно до вашого запиту та відповідаю на запитання. Субота та неділя — вихідні.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Вартість базової консультації + ведення — 500&nbsp;$ за курсом НБУ. Після оплати надсилаю анкету.</div></div></details>
-          <a href="#apply" style="margin-top: auto; align-self: flex-start; background: #042c29; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 14px; padding: 13px 24px; border-radius: 999px; transition: transform .25s, box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(4,44,41,.4)">Записатись</a>
+          <a href="#apply" data-format="Ведення (супровід 4 тижні)" style="margin-top: auto; align-self: flex-start; background: #042c29; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 14px; padding: 13px 24px; border-radius: 999px; transition: transform .25s, box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(4,44,41,.4)">Записатись</a>
         </div>
         <div style="background: #fff; border: 1px solid #042c2918; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 12px;">
           <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8a9a86;">Разовий план</div>
@@ -247,7 +226,7 @@
             <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #5c6353;"><span style="color: #042c29; flex: none; margin-top: 1px;">✓</span>Рекомендації на 4–6 тижнів</div>
           </div>
           <details style="border-top: 1px solid #042c2914; padding-top: 12px; margin-top: 2px;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; list-style: none; font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #494224;">Деталі консультації<span class="hale-arrow">↓</span></summary><div style="display: flex; flex-direction: column; gap: 9px; padding-top: 12px; font-size: 13.5px; line-height: 1.6; color: #5c6353;"><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Працюю в залежності від стану.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Без гормонів, за принципами натуропатії: харчування, трави, спосіб життя та багато інших інструментів.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Первинна консультація включає: заповнення анкети, аналіз анкети та обстежень, що вже здавали раніше. За потреби пишу список аналізів, які необхідно доздати.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Далі — письмовий план рекомендацій та консультація у вигляді відео-дзвінка (1 година).</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Рекомендації після первинної консультації — на 4–6 тижнів.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Після консультації відповідаю на ваші запитання протягом 1 тижня.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Вартість — 170&nbsp;$ за курсом НБУ. Після оплати надсилаю анкету.</div></div></details>
-          <a href="#apply" style="margin-top: auto; align-self: flex-start; color: #042c29; font-size: 14px; padding: 11px 0; border-bottom: 1.5px solid #042c29; transition: opacity .2s;" style-hover="opacity:.55">Записатись <span class="hale-arrow">→</span></a>
+          <a href="#apply" data-format="Базова (разовий план)" style="margin-top: auto; align-self: flex-start; color: #042c29; font-size: 14px; padding: 11px 0; border-bottom: 1.5px solid #042c29; transition: opacity .2s;" style-hover="opacity:.55">Записатись <span class="hale-arrow">→</span></a>
         </div>
         <div style="background: #fff; border: 1px solid #042c2918; border-radius: 22px; padding: 30px; display: flex; flex-direction: column; gap: 12px;">
           <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #7a2813;">ПРІОРИТЕТ&nbsp;</div>
@@ -260,9 +239,10 @@
             <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #5c6353;"><span style="color: #042c29; flex: none; margin-top: 1px;">✓</span>Рекомендації на 4–6 тижнів</div>
           </div>
           <details style="border-top: 1px solid #042c2914; padding-top: 12px; margin-top: 2px;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 10px; cursor: pointer; list-style: none; font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #494224;">Деталі консультації<span class="hale-arrow">↓</span></summary><div style="display: flex; flex-direction: column; gap: 9px; padding-top: 12px; font-size: 13.5px; line-height: 1.6; color: #5c6353;"><div style="display:flex;gap:9px"><span style="color: rgb(73, 66, 36); flex: 0 0 auto;">—</span>Пріоритетний запис.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Первинна консультація включає: заповнення анкети, аналіз анкети та обстежень, що вже здавали раніше. За потреби пишу список аналізів, які необхідно доздати.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Далі — письмовий план рекомендацій та консультація у вигляді відео-дзвінка (1 година).</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Рекомендації після первинної консультації — на 4–6 тижнів.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Після консультації відповідаю на ваші запитання протягом 1 тижня.</div><div style="display:flex;gap:9px"><span style="color:#494224;flex:none">—</span>Вартість — 200&nbsp;$ за курсом НБУ. Після оплати надсилаю анкету.</div></div></details>
-          <a href="#apply" style="margin-top: auto; align-self: flex-start; color: #042c29; font-size: 14px; padding: 11px 0; border-bottom: 1.5px solid #042c29; transition: opacity .2s;" style-hover="opacity:.55">Записатись <span class="hale-arrow">→</span></a>
+          <a href="#apply" data-format="Термінова" style="margin-top: auto; align-self: flex-start; color: #042c29; font-size: 14px; padding: 11px 0; border-bottom: 1.5px solid #042c29; transition: opacity .2s;" style-hover="opacity:.55">Записатись <span class="hale-arrow">→</span></a>
         </div>
       </div>
+      <div style="margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 16px; font-size: 14.5px; color: #3a4034;"><span>Не знаєте, що обрати?</span><button type="button" data-quiz="1" style="cursor: pointer; border: 1.5px solid #042c29; background: transparent; color: #042c29; border-radius: 999px; padding: 11px 22px; font-size: 13.5px; text-transform: uppercase; letter-spacing: .05em; transition: background .2s, color .2s;" style-hover="background:#042c29;color:#fff">Підібрати формат за 30 секунд</button></div>
       <div style="margin-top: 22px; background: #f1eee5; border: 1px solid #042c2914; border-radius: 22px; padding: clamp(24px, 3vw, 34px); animation: haleTab .35s ease both;">
         <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px;"><h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: 24px; margin: 0;">Популярні питання</h3><span style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #494224;">Коротко про підхід</span></div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
@@ -271,24 +251,6 @@
           
           <details style="background: #fff; border: 1px solid #042c2914; border-radius: 14px; padding: 4px 18px;"><summary style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; cursor: pointer; list-style: none; font-size: 15px; color: #042c29;">Що важливо перед консультацією?<span class="hale-arrow" style="color: rgb(73, 66, 36);">↓</span></summary><p style="margin: 0 0 14px; font-size: 14px; line-height: 1.65; color: #5c6353;">Важливо: бути готовим працювати з тілом, змінювати спосіб життя, бути чесним, відкритим, готовим працювати і з мисленням і з психосоматикою.     Також, важливо розуміти, що комусь однієї консультації і плану на 1-2 місяці буде достатньо, щоб мати свої результати. Але, якщо стан є хронічним, залікованим - у нас з Вами має бути певна співпраця, протягом певного часу.     Зазвичай, я працюю з людьми протягом 5-9 місяців, це приблизно 3-6 консультацій.</p></details>
         </div>
-      </div>
-    </sc-if>
-
-    <!-- CLUBS PANEL -->
-    <sc-if value="{{ isClubs }}" hint-placeholder-val="{{ false }}">
-      <div style="max-width: 880px; margin: 0 auto; background: #f1eee5; border: 1px solid #042c2914; border-radius: 22px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 20px; animation: haleTab .35s ease both;">
-        <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #494224;">Онлайн-клуб на рік · уже працює</div>
-        <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(26px, 4vw, 34px); margin: 0; color: #042c29; line-height: 1.1;">Клуб сімейного здоровʼя</h3>
-        <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3a4034;">Здоровʼя всієї сімʼї за одну оплату. Дитячий і дорослий напрямки, обидва чати. Не інформація, а звички: одна тема на місяць і дії від 5 хвилин на день.</p>
-        <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8a9280; margin-top: 4px;">Як працює клуб</div>
-        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 14.5px; line-height: 1.55; color: #5c6353;"><li style="display: flex; gap: 9px; align-items: flex-start;"><span style="color: #8a9a86; flex: none;">✓</span><span><b>Нова тема</b> щомісяця — розбираємо теорію без перевантаження</span></li><li style="display: flex; gap: 9px; align-items: flex-start;"><span style="color: #8a9a86; flex: none;">✓</span><span><b>Практичні дії</b> — схеми, рекомендації, короткі програми й трекери звичок</span></li><li style="display: flex; gap: 9px; align-items: flex-start;"><span style="color: #8a9a86; flex: none;">✓</span><span><b>Прямий ефір</b> щомісяця — окремо для дорослих і окремо для дитячого напрямку</span></li><li style="display: flex; gap: 9px; align-items: flex-start;"><span style="color: #8a9a86; flex: none;">✓</span><span><b>Підтримка Юлії у чаті</b></span></li></ul>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px;">
-          <div style="background: #fff; border: 1px solid #042c2914; border-radius: 16px; padding: 20px;"><div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8a9a86; margin-bottom: 8px;">Для дітей</div><div style="font-family: 'Calvino', serif; font-size: 20px; color: #042c29; margin-bottom: 8px;">Дитячий напрямок</div><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c6353;">Про здоровʼя, харчування, імунітет, профілактику та підтримку дітей: від прикорму та температури до підготовки до школи й здоровʼя підлітків. Чат для батьків.</p></div>
-          <div style="background: #fff; border: 1px solid #042c2914; border-radius: 16px; padding: 20px;"><div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #8a9a86; margin-bottom: 8px;">Для вас</div><div style="font-family: 'Calvino', serif; font-size: 20px; color: #042c29; margin-bottom: 8px;">Дорослий напрямок</div><p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c6353;">Клуб здорових звичок: маленькі регулярні дії, антистрес-методи, трекери та гейміфікація. Харчування, травлення, біоритми, сон і системна турбота про організм. Чат для дорослих.</p></div>
-        </div>
-        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5c6353;">Можна обрати один напрямок або обидва. Одна оплата, доступ до обох. Приєднатись можна будь-коли — щомісяця нова тема для дітей і для дорослих.</p>
-        <div style="background: #e6ebd4; border: 1px solid #042c2914; border-radius: 14px; padding: 14px 16px; font-size: 14px; line-height: 1.6; color: #3a4034;"><strong style="color: #042c29;">від 38 $ на місяць</strong>. Пакети на 3, 6 або 12 місяців — на сайті клубу.</div>
-        <a href="https://halecare.club/" target="_blank" rel="noopener" style="align-self: flex-start; background: #042c29; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 14px; padding: 15px 30px; border-radius: 999px; transition: transform .25s, box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(4,44,41,.55)">Перейти на сайт клубу <span class="hale-arrow">→</span></a>
       </div>
     </sc-if>
 
@@ -322,20 +284,7 @@
           </div>
         </div>
         <div style="border-top: 1px solid #042c2914; padding-top: 20px;">
-          <div style="display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px;"><h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: 22px; margin: 0;">Що кажуть учасниці</h3><span style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #494224;">Відгуки після курсів</span></div>
-          <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory;">
-            <img width="568" height="632" src="/assets/img/review-38361e47.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="456" height="466" src="/assets/img/review-69b24c61.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="694" height="336" src="/assets/img/review-a3aa3e8b.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="672" height="564" src="/assets/img/review-dae34d29.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="678" height="478" src="/assets/img/review-ce26d7c0.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="614" height="496" src="/assets/img/review-858230db.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="552" height="574" src="/assets/img/review-b8d4aa2d.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="596" height="518" src="/assets/img/review-8fef7d34.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="540" height="440" src="/assets/img/review-3b6639a1.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-            <img width="526" height="418" src="/assets/img/review-4f732059.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="height: 240px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none;">
-          </div>
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #494224; margin: 20px 0 12px;">Страви учасниць за рекомендаціями курсу</div>
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #494224; margin: 0 0 12px;">Страви учасниць за рекомендаціями</div>
           <div style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory;">
             <img width="330" height="440" src="/assets/img/dish-037e8289.webp" alt="Страва за рекомендаціями курсу" loading="lazy" decoding="async" style="height: 200px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none; object-fit: cover;">
             <img width="330" height="440" src="/assets/img/dish-61ec67cb.webp" alt="Страва за рекомендаціями курсу" loading="lazy" decoding="async" style="height: 200px; width: auto; border-radius: 14px; border: 1px solid #042c2914; scroll-snap-align: start; flex: none; object-fit: cover;">
@@ -351,76 +300,12 @@
     </sc-if>
   </section>
 
-  <!-- ===== LEAD MAGNET ===== -->
-  <section id="free" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 56px) clamp(56px, 7vw, 92px);">
-    <div style="border: 1px solid #042c2918; border-radius: 22px; padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 44px); align-items: center; background: #fff;">
-      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px;">
-        <div style="font-family: 'Eastman', monospace; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #494224;">Відео від Юлії</div>
-        <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(26px, 4vw, 34px); margin: 0; line-height: 1.1;">Дивіться Hale Holistic на YouTube</h3>
-        <p style="margin: 0; font-size: 15px; line-height: 1.72; color: #5c6353; max-width: 420px;">Я пройшла шлях від класичного підходу до цілісного погляду на здоровʼя. У цьому інтервʼю - чесна розмова про те, чому лікування симптомів перестало працювати, як читати тіло, що таке «корінь проблеми» і з чого почати своє оздоровлення.</p>
-        
-        <a href="https://www.youtube.com/@hale.holistic" target="_blank" rel="noopener" style="align-self: flex-start; margin-top: 4px; background: #C0764E; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 14px; padding: 14px 26px; border-radius: 999px; transition: transform .25s, box-shadow .25s, background .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(122,40,19,.5);background:#a9633f">Перейти на канал</a>
-      </div>
-      <a href="https://www.youtube.com/watch?v=WhNI5eoaaS0&amp;t=1073s" target="_blank" rel="noopener" style="flex: 1 1 320px; position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; background: #000; display: block; transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-3px);box-shadow:0 24px 50px -30px rgba(4,44,41,.45)">
-        <img loading="lazy" decoding="async" width="480" height="270" src="/assets/img/youtube-interview.webp" alt="Юлія Кравченко: чому класична медицина не лікує причину" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.14);"><div style="width: 64px; height: 64px; border-radius: 999px; background: #C0764E; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px -12px rgba(0,0,0,.6);"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></div></div>
-        <span style="position: absolute; bottom: 12px; left: 14px; font-family:'Eastman',monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.6);">YouTube · Hale Holistic</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===== ACADEMY ===== -->
-  <section id="academy" data-reveal="" style="background: #042c29; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 56px);">
-    <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 3.5vw, 44px);">
-
-      <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px;">
-        <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); margin: 0; color: #f4f3ed; line-height: 1.1;">Hale Освіта</h2>
-        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #b9c5b0; max-width: 520px;">Знання, що повертають розуміння тіла.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start;">
-
-        <div style="display: flex; flex-direction: column; gap: 12px; background: #ffffff08; border: 1px solid #ffffff1f; border-radius: 22px; padding: clamp(24px, 3vw, 34px);">
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #8a9a86;">01</div>
-          <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(24px, 3vw, 30px); margin: 0; color: #f4f3ed;">Лекції від академії</h3>
-          <p style="margin: 0 0 6px; font-size: 14.5px; line-height: 1.7; color: #b9c5b0;">Окремі теми про роботу систем тіла та фітотерапію — щоб ознайомитись із напрямом і вже мати розуміння, як собі допомагати.</p>
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #cfdca8; margin-top: 4px;">Безкоштовні лекції</div>
-          <a href="https://hale.lms.softbook.app/register/course/17790" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Фітотерапія при стресі <span class="hale-arrow" style="color:#cfdca8">→</span></a>
-          <a href="https://hale.lms.softbook.app/register/course/17756" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Підтримка жовчного міхура <span class="hale-arrow" style="color:#cfdca8">→</span></a>
-          <a href="https://hale.lms.softbook.app/register/course/17144" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Здоровʼя сечовидільної системи <span class="hale-arrow" style="color:#cfdca8">→</span></a>
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #e9c4ac; margin-top: 10px;">Платні лекції</div>
-          <a href="https://halelectures.wayforpay.shop/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #C0764E4d; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Активність вірусів <span class="hale-arrow" style="color:#e9c4ac">→</span></a>
-          <a href="https://halelectures.wayforpay.shop/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #C0764E4d; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Аденоїди. Шлях до вирішення <span class="hale-arrow" style="color:#e9c4ac">→</span></a>
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 12px; background: #0a3a35; border: 1px solid #cfdca840; border-radius: 22px; padding: clamp(24px, 3vw, 34px);">
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #cfdca8;">02</div>
-          <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(24px, 3vw, 30px); margin: 0; color: #f4f3ed;">Велике навчання</h3>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #b9c5b0;">Навчання для тих, хто хоче працювати у сфері здоровʼя: фітотерапія, натуропатія та цілісний підхід до здоровʼя — від теорії до практики.</p>
-          <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #cfdca8;">Сповістимо Вас про запуск, оновлені умови та вартість першими.</p>
-          <a href="#apply" data-format="Передзапис: Велике навчання (2 потік)" style="align-self: flex-start; margin-top: 8px; display: flex; align-items: center; gap: 10px; background: #cfdca8; color: #042c29; border-radius: 999px; padding: 14px 24px; font-family: 'Eastman', sans-serif; font-size: 13.5px; text-transform: uppercase; letter-spacing: .05em; transition: transform .25s, box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -18px rgba(207,220,168,.6)" style-active="transform:translateY(0)">Передзапис на 2 потік <span class="hale-arrow">→</span></a>
-          <span style="font-size: 12.5px; line-height: 1.6; color: #8a9a86;">Передзапис ні до чого не зобовʼязує — ми лише повідомимо про старт.</span>
-        </div>
-
-      </div>
-
-      <a href="https://www.instagram.com/hale.holistic.academy/" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: #ffffff0a; border: 1px solid #ffffff1f; border-radius: 18px; padding: 20px clamp(20px, 2.5vw, 28px); transition: background .25s, transform .25s;" style-hover="background:#ffffff14;transform:translateY(-2px)">
-        <div style="display: flex; flex-direction: column; gap: 4px;">
-          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #8a9a86;">Instagram академії</div>
-          <div style="font-size: 15.5px; color: #f4f3ed;">@hale.holistic.academy</div>
-        </div>
-        <span style="display: flex; align-items: center; gap: 10px; font-family: 'Eastman', sans-serif; font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; color: #cfdca8;">Дивитись <span class="hale-arrow">→</span></span>
-      </a>
-
-    </div>
-  </section>
-
   <!-- ===== REVIEWS ===== -->
   <section id="reviews" data-reveal="" style="padding: clamp(56px, 7vw, 92px) 0;">
     <div style="max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center;">
       <div style="font-family: 'Eastman', monospace; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #494224;"><br></div>
       <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(32px, 5vw, 48px); margin: 0; line-height: 1.05;">Що пишуть клієнтки</h2>
-      <p style="margin: 0; font-size: 15px; line-height: 1.72; color: #5c6353; max-width: 480px;">Живі відгуки. Гортайте, щоб прочитати більше.</p>
+      <p style="margin: 0; font-size: 15px; line-height: 1.72; color: #5c6353; max-width: 480px;">Живі відгуки після консультацій, курсів і програм. Гортайте, щоб прочитати більше.</p>
     </div>
     <div style="display: flex; gap: 16px; align-items: center; overflow-x: auto; scroll-snap-type: x mandatory; padding: 28px clamp(20px, 5vw, 56px) 12px; margin-top: 4px; -webkit-overflow-scrolling: touch;">
       <a href="/assets/img/review-00148cea.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="482" height="804" src="/assets/img/review-00148cea.webp" alt="Відгук клієнтки" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
@@ -433,6 +318,16 @@
       <a href="/assets/img/review-28f5270f.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="526" height="332" src="/assets/img/review-28f5270f.webp" alt="Відгук клієнтки" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
       <a href="/assets/img/review-84997498.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="570" height="268" src="/assets/img/review-84997498.webp" alt="Відгук клієнтки" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
       <a href="/assets/img/review-1f002232.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="524" height="626" src="/assets/img/review-1f002232.webp" alt="Відгук клієнтки" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-38361e47.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="568" height="632" src="/assets/img/review-38361e47.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-69b24c61.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="456" height="466" src="/assets/img/review-69b24c61.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-a3aa3e8b.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="694" height="336" src="/assets/img/review-a3aa3e8b.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-dae34d29.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="672" height="564" src="/assets/img/review-dae34d29.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-ce26d7c0.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="678" height="478" src="/assets/img/review-ce26d7c0.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-858230db.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="614" height="496" src="/assets/img/review-858230db.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-b8d4aa2d.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="552" height="574" src="/assets/img/review-b8d4aa2d.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-8fef7d34.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="596" height="518" src="/assets/img/review-8fef7d34.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-3b6639a1.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="540" height="440" src="/assets/img/review-3b6639a1.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
+      <a href="/assets/img/review-4f732059.webp" target="_blank" rel="noopener" style="flex: none; width: min(300px, 76vw); scroll-snap-align: center; border-radius: 18px; overflow: hidden; border: 1px solid #042c2914; background: #fff; box-shadow: 0 20px 44px -34px rgba(4,44,41,.5); transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-4px);box-shadow:0 28px 56px -32px rgba(4,44,41,.5)"><img width="526" height="418" src="/assets/img/review-4f732059.webp" alt="Відгук учасниці курсу" loading="lazy" decoding="async" style="width: 100%; display: block;"></a>
     </div>
   </section>
 
@@ -510,14 +405,87 @@
     </div>
   </section>
 
-  <!-- ===== CTA ===== -->
-  <section id="cta" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 56px) clamp(56px, 8vw, 88px); text-align: center;">
-    <div style="border-top: 1px solid #042c2922; padding-top: clamp(64px, 8vw, 100px); display: flex; flex-direction: column; align-items: center; gap: 22px;">
-      <svg width="38" height="52" sc-camel-view-box="0 0 44 60" fill="none" stroke="#494224" stroke-width="1.3" style="opacity:.45;"><path d="M22 58 V5" stroke-linecap="round"></path><path d="M22 22 C11 18 7 9 8 3 C16 4 21 11 22 20Z" fill="#494224" fill-opacity=".08"></path><path d="M22 33 C33 29 37 20 36 14 C28 15 23 22 22 31Z" fill="#494224" fill-opacity=".08"></path><path d="M22 45 C11 41 7 32 8 26 C16 27 21 34 22 43Z" fill="#494224" fill-opacity=".08"></path></svg>
-      <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(38px, 6vw, 54px); margin: 0; line-height: 1.03; max-width: 660px;">Готові почати шлях до себе?</h2>
-      <p style="margin: 0; font-size: 16px; max-width: 460px; color: #3a4034;">Зробіть перший крок природного відновлення разом із Юлією.</p>
-      <a href="#apply" style="background: #C0764E; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 15px; padding: 16px 34px; border-radius: 999px; transition: transform .25s, box-shadow .25s, background .25s; animation: haleCta 3.4s ease-in-out infinite;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(4,44,41,.4)" style-active="transform:translateY(0);box-shadow:0 4px 10px -7px rgba(122,40,19,.55)">Записатись на консультацію</a>
-      
+  <!-- ===== FAQ ===== -->
+  <section id="faq" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 56px);">
+    <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(32px, 5vw, 42px); margin: 0 0 28px;">Часті запитання</h2>
+    <div style="max-width: 860px; border-top: 1px solid #042c2922;">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+        <div style="border-bottom: 1px solid #042c2922;">
+          <button sc-camel-on-click="{{ f.toggle }}" aria-expanded="{{ f.exp }}" aria-controls="{{ f.pid }}" style="width: 100%; background: transparent; border: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: clamp(18px, 2.6vw, 24px) 4px; text-align: left; font-family: 'Calvino', serif; font-size: clamp(18px, 2.6vw, 23px); color: #042c29; transition: color .2s;" style-hover="color:#494224">
+            <span>{{ f.q }}</span>
+            <span style="font-size: 26px; color: #494224; flex: none; line-height: 1;">{{ f.sign }}</span>
+          </button>
+          <div id="{{ f.pid }}" role="region" style="display: grid; grid-template-rows: {{ f.rows }}; opacity: {{ f.op }}; transition: grid-template-rows .4s ease, opacity .4s ease;">
+            <div style="overflow: hidden;">
+              <p style="margin: 0; padding: 0 4px 24px; font-size: 15px; line-height: 1.8; color: #5c6353; max-width: 700px; white-space: pre-line;">{{ f.a }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== LEAD MAGNET ===== -->
+  <section id="free" data-reveal="" style="max-width: 1120px; margin: 0 auto; padding: clamp(40px, 5vw, 64px) clamp(20px, 5vw, 56px) clamp(56px, 7vw, 92px);">
+    <div style="border: 1px solid #042c2918; border-radius: 22px; padding: clamp(28px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: clamp(24px, 4vw, 44px); align-items: center; background: #fff;">
+      <div style="flex: 1 1 280px; display: flex; flex-direction: column; gap: 14px;">
+        <div style="font-family: 'Eastman', monospace; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #494224;">Відео від Юлії</div>
+        <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(26px, 4vw, 34px); margin: 0; line-height: 1.1;">Дивіться Hale Holistic на YouTube</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.72; color: #5c6353; max-width: 420px;">Я пройшла шлях від класичного підходу до цілісного погляду на здоровʼя. У цьому інтервʼю - чесна розмова про те, чому лікування симптомів перестало працювати, як читати тіло, що таке «корінь проблеми» і з чого почати своє оздоровлення.</p>
+        
+        <a href="https://www.youtube.com/@hale.holistic" target="_blank" rel="noopener" style="align-self: flex-start; margin-top: 4px; background: #C0764E; color: #fff; text-transform: uppercase; letter-spacing: .05em; font-size: 14px; padding: 14px 26px; border-radius: 999px; transition: transform .25s, box-shadow .25s, background .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -16px rgba(122,40,19,.5);background:#a9633f">Перейти на канал</a>
+      </div>
+      <a href="https://www.youtube.com/watch?v=WhNI5eoaaS0&amp;t=1073s" target="_blank" rel="noopener" style="flex: 1 1 320px; position: relative; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; background: #000; display: block; transition: transform .3s, box-shadow .3s;" style-hover="transform:translateY(-3px);box-shadow:0 24px 50px -30px rgba(4,44,41,.45)">
+        <img loading="lazy" decoding="async" width="480" height="270" src="/assets/img/youtube-interview.webp" alt="Юлія Кравченко: чому класична медицина не лікує причину" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.14);"><div style="width: 64px; height: 64px; border-radius: 999px; background: #C0764E; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 30px -12px rgba(0,0,0,.6);"><svg width="24" height="24" sc-camel-view-box="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"></path></svg></div></div>
+        <span style="position: absolute; bottom: 12px; left: 14px; font-family:'Eastman',monospace; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 4px rgba(0,0,0,.6);">YouTube · Hale Holistic</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== ACADEMY ===== -->
+  <section id="academy" data-reveal="" style="background: #042c29; padding: clamp(56px, 7vw, 92px) clamp(20px, 5vw, 56px);">
+    <div style="max-width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(28px, 3.5vw, 44px);">
+
+      <div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px;">
+        <h2 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(32px, 5vw, 44px); margin: 0; color: #f4f3ed; line-height: 1.1;">Hale Освіта</h2>
+        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #b9c5b0; max-width: 520px;">Знання, що повертають розуміння тіла.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start;">
+
+        <div style="display: flex; flex-direction: column; gap: 12px; background: #ffffff08; border: 1px solid #ffffff1f; border-radius: 22px; padding: clamp(24px, 3vw, 34px);">
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #8a9a86;">01</div>
+          <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(24px, 3vw, 30px); margin: 0; color: #f4f3ed;">Лекції від академії</h3>
+          <p style="margin: 0 0 6px; font-size: 14.5px; line-height: 1.7; color: #b9c5b0;">Окремі теми про роботу систем тіла та фітотерапію — щоб ознайомитись із напрямом і вже мати розуміння, як собі допомагати.</p>
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #cfdca8; margin-top: 4px;">Безкоштовні лекції</div>
+          <a href="https://hale.lms.softbook.app/register/course/17790" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Фітотерапія при стресі <span class="hale-arrow" style="color:#cfdca8">→</span></a>
+          <a href="https://hale.lms.softbook.app/register/course/17756" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Підтримка жовчного міхура <span class="hale-arrow" style="color:#cfdca8">→</span></a>
+          <a href="https://hale.lms.softbook.app/register/course/17144" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #ffffff1f; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Здоровʼя сечовидільної системи <span class="hale-arrow" style="color:#cfdca8">→</span></a>
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #e9c4ac; margin-top: 10px;">Платні лекції</div>
+          <a href="https://halelectures.wayforpay.shop/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #C0764E4d; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Активність вірусів <span class="hale-arrow" style="color:#e9c4ac">→</span></a>
+          <a href="https://halelectures.wayforpay.shop/" target="_blank" rel="noopener" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff0d; border: 1px solid #C0764E4d; border-radius: 14px; padding: 15px 18px; font-size: 14.5px; color: #f4f3ed; transition: transform .25s, background .25s;" style-hover="transform:translateY(-2px);background:#ffffff1a">Аденоїди. Шлях до вирішення <span class="hale-arrow" style="color:#e9c4ac">→</span></a>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; background: #0a3a35; border: 1px solid #cfdca840; border-radius: 22px; padding: clamp(24px, 3vw, 34px);">
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #cfdca8;">02</div>
+          <h3 style="font-family: 'Calvino', serif; font-weight: 400; font-size: clamp(24px, 3vw, 30px); margin: 0; color: #f4f3ed;">Велике навчання</h3>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #b9c5b0;">Навчання для тих, хто хоче працювати у сфері здоровʼя: фітотерапія, натуропатія та цілісний підхід до здоровʼя — від теорії до практики.</p>
+          <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #cfdca8;">Сповістимо Вас про запуск, оновлені умови та вартість першими.</p>
+          <a href="#apply" data-format="Передзапис: Велике навчання (2 потік)" style="align-self: flex-start; margin-top: 8px; display: flex; align-items: center; gap: 10px; background: #cfdca8; color: #042c29; border-radius: 999px; padding: 14px 24px; font-family: 'Eastman', sans-serif; font-size: 13.5px; text-transform: uppercase; letter-spacing: .05em; transition: transform .25s, box-shadow .25s;" style-hover="transform:translateY(-2px);box-shadow:0 14px 28px -18px rgba(207,220,168,.6)" style-active="transform:translateY(0)">Передзапис на 2 потік <span class="hale-arrow">→</span></a>
+          <span style="font-size: 12.5px; line-height: 1.6; color: #8a9a86;">Передзапис ні до чого не зобовʼязує — ми лише повідомимо про старт.</span>
+        </div>
+
+      </div>
+
+      <a href="https://www.instagram.com/hale.holistic.academy/" target="_blank" rel="noopener" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; background: #ffffff0a; border: 1px solid #ffffff1f; border-radius: 18px; padding: 20px clamp(20px, 2.5vw, 28px); transition: background .25s, transform .25s;" style-hover="background:#ffffff14;transform:translateY(-2px)">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <div style="font-family: 'Eastman', monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #8a9a86;">Instagram академії</div>
+          <div style="font-size: 15.5px; color: #f4f3ed;">@hale.holistic.academy</div>
+        </div>
+        <span style="display: flex; align-items: center; gap: 10px; font-family: 'Eastman', sans-serif; font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; color: #cfdca8;">Дивитись <span class="hale-arrow">→</span></span>
+      </a>
+
     </div>
   </section>
 
